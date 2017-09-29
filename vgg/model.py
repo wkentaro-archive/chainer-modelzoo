@@ -60,7 +60,7 @@ class VGG16(chainer.Chain):
         self.score = h
 
         if t is None:
-            assert chainer.config.train
+            assert not chainer.config.train
             return
 
         self.loss = F.softmax_cross_entropy(self.score, t)
